@@ -77,7 +77,6 @@ public class ChatService {
         this.chatMessageRepository.save(newChatMessage);
 
         messages.add(new UserMessage(message));
-        System.out.println("MESSAGES Count: " + messages.size());
         ChatResponse response = chatModel.call(new Prompt(messages));
         Message responseMessage = response.getResults().get(0).getOutput();
 
