@@ -1,9 +1,9 @@
 # copilot-onboarding-java
 
 ## Prerequisites
-Java 17 SDK
-Maven 3.8.3
-Angular 14
+Java 17 SDK  
+Maven 3.8.3  
+Angular 14  
 npm 9.5
 
 ## Building the backend
