@@ -1,41 +1,86 @@
-# copilot-onboarding-java
+# 🚀 Telemetry Lab
 
-## Prerequisites
-Java 17 SDK  
-Maven 3.8.3  
-Angular 14  
-npm 9.5
+A multi-service microservices project built with **Java Spring Boot**, **Apache Kafka**, and **MongoDB**, designed to simulate, process, and analyze **telemetry data streams**.
 
-## Building the backend
-Go to /chat folder and run the following command(s):
+Perfect for:
+- Learning **event-driven architecture**
+- Practicing with **Kafka** producers/consumers
+- Storing/querying telemetry in **MongoDB**
+- Training **GitHub Copilot**
+
+---
+
+## 🧱 Architecture
+
+[telemetry-producer] → (Kafka: telemetry.raw) → [telemetry-processor] → (Kafka: telemetry.processed) → [telemetry-store] → (MongoDB: telemetry_data) ↑ [telemetry-api] ← REST access to MongoDB
+
+
+Each microservice is a Spring Boot app, with Kafka and Mongo orchestrated via Docker.
+
+---
+
+## 🧰 Tech Stack
+
+- Java 17+
+- Spring Boot 3+
+- Apache Kafka
+- MongoDB
+- Docker + Docker Compose
+- Spring Kafka, Spring Data MongoDB
+- (Optional) Swagger/OpenAPI, Kafka UI, Mongo Express
+
+---
+
+## 📦 Modules
+
+| Module              | Description                                      |
+|---------------------|--------------------------------------------------|
+| `telemetry-producer` | Simulates and streams random telemetry data to Kafka |
+| `telemetry-processor` | Consumes raw telemetry, adds metadata, transforms |
+| `telemetry-store`    | Persists processed telemetry into MongoDB        |
+| `telemetry-api`      | REST API to query telemetry from MongoDB        |
+| `telemetry-common`   | Shared DTOs and models (optional)               |
+
+---
+
+## 🚀 Getting Started
+
+### 🔧 Requirements
+
+- [Docker](https://www.docker.com/)
+- Java 17+
+- Maven
+
+---
+
+### 🐳 Start Kafka + MongoDB
+
 ```bash
-mvn clean package
+docker-compose up -d
 ```
-or
+This will start:
+- Kafka on localhost:9092
+- MongoDB on localhost:27017
+- Kafka UI on http://localhost:8080
+- Mongo Express on http://localhost:8081
 
-```bash
-mvn clean install
-```
+---
 
-## Running the backend
-Go to /chat folder and run the following command(s):
+### ▶️ Run the Services
 ```bash
-mvn spring-boot:run
-```
-To run tests use the following command:
-```bash
-mvn test
-```
-
-## Building the frontend
-To build the front-end, go to /onboarding-demo folder and run the following command(s):
-```bash
-npm install
+cd telemetry-producer && mvn spring-boot:run
+cd telemetry-processor && mvn spring-boot:run
+cd telemetry-store && mvn spring-boot:run
+cd telemetry-api && mvn spring-boot:run
 ```
 
+---
 
-## Running the frontend
-To run the front-end, go to /onboarding-demo folder and run the following command(s):
-```bash
-npm start
-```
+### 📡 API Endpoints
+Available from telemetry-api on http://localhost:8082
+- GET /api/telemetry/latest/{deviceId}
+- GET /api/telemetry/range?start=2024-04-01T00:00:00Z&end=2024-04-10T00:00:00Z
+- GET /api/telemetry/low-battery?threshold=20
+
+If Swagger is enabled:
+- Swagger UI: http://localhost:8082/swagger-ui.html
