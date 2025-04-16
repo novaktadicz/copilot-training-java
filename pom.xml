@@ -26,7 +26,6 @@
 		<module>telemetry-producer</module>
 		<module>telemetry-store</module>
 		<module>telemetry-api</module>
-		<module>telemetry-common</module>
 	</modules>
 	<scm>
 		<connection/>

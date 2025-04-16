@@ -13,10 +13,21 @@ public class TelemetryData {
     private String id;
     private String deviceId;
     private Instant timestamp;
-    private Instant processedAt;
     private double latitude;
     private double longitude;
     private Metrics metrics;
+    private Instant processedAt;
+
+    private String deviceName;
+    private String firmwareVersion;
+    private String owner;
+    private Double maxTemperature;
+    private Double maxBattery;
+
+    private Double estimatedBatteryHealth;
+    private Double acceleration;
+    private Double batteryPerKm;
+    private Double distanceFromLast;
 
     // Getters and setters
     public String getId() {
@@ -73,6 +84,78 @@ public class TelemetryData {
 
     public void setMetrics(Metrics metrics) {
         this.metrics = metrics;
+    }
+
+    public String getDeviceName() {
+        return deviceName;
+    }
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
+
+    public String getFirmwareVersion() {
+        return firmwareVersion;
+    }
+
+    public void setFirmwareVersion(String firmwareVersion) {
+        this.firmwareVersion = firmwareVersion;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public Double getMaxTemperature() {
+        return maxTemperature;
+    }
+
+    public void setMaxTemperature(Double maxTemperature) {
+        this.maxTemperature = maxTemperature;
+    }
+
+    public Double getMaxBattery() {
+        return maxBattery;
+    }
+
+    public void setMaxBattery(Double maxBattery) {
+        this.maxBattery = maxBattery;
+    }
+
+    public Double getEstimatedBatteryHealth() {
+        return estimatedBatteryHealth;
+    }
+
+    public void setEstimatedBatteryHealth(Double estimatedBatteryHealth) {
+        this.estimatedBatteryHealth = estimatedBatteryHealth;
+    }
+
+    public Double getAcceleration() {
+        return acceleration;
+    }
+
+    public void setAcceleration(Double acceleration) {
+        this.acceleration = acceleration;
+    }
+
+    public Double getBatteryPerKm() {
+        return batteryPerKm;
+    }
+
+    public void setBatteryPerKm(Double batteryPerKm) {
+        this.batteryPerKm = batteryPerKm;
+    }
+
+    public Double getDistanceFromLast() {
+        return distanceFromLast;
+    }
+
+    public void setDistanceFromLast(Double distanceFromLast) {
+        this.distanceFromLast = distanceFromLast;
     }
 
     public static class Metrics {
