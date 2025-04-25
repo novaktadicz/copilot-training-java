@@ -12,7 +12,7 @@
 	<artifactId>copilot-training-java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>copilot-onboarding-java</name>
+	<name>copilot-training-java</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

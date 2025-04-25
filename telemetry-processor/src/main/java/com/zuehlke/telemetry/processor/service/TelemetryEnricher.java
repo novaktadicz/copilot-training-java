@@ -1,5 +1,6 @@
 package com.zuehlke.telemetry.processor.service;
 
+import com.zuehlke.telemetry.processor.model.DeviceMetadata;
 import com.zuehlke.telemetry.processor.model.TelemetryData;
 import org.springframework.stereotype.Service;
 

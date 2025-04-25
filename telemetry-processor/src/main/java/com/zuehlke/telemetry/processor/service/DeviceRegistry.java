@@ -1,5 +1,6 @@
 package com.zuehlke.telemetry.processor.service;
 
+import com.zuehlke.telemetry.processor.model.DeviceMetadata;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 

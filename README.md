@@ -76,6 +76,24 @@ cd telemetry-api && mvn spring-boot:run
 
 ---
 
+### 🧪 Running Tests
+
+Each module includes unit and integration tests. To run all tests for a specific module, navigate to the module directory and execute:
+
+```bash
+mvn test
+```
+
+To run tests for all modules, execute the following command from the root directory:
+
+```bash
+mvn test
+```
+
+Ensure that Kafka and MongoDB are running via Docker before running integration tests.
+
+---
+
 ### 📡 API Endpoints
 Available from telemetry-api on http://localhost:8082
 - GET /api/telemetry/latest/{deviceId}
@@ -84,3 +102,4 @@ Available from telemetry-api on http://localhost:8082
 
 If Swagger is enabled:
 - Swagger UI: http://localhost:8082/swagger-ui.html
+`

@@ -1,4 +1,4 @@
-package com.zuehlke.telemetry.processor.service;
+package com.zuehlke.telemetry.processor.model;
 
 public class DeviceMetadata {
     private String deviceId;
