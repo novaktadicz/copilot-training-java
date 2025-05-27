@@ -2,7 +2,7 @@ package com.zuehlke.telemetry.processor.model;
 
 import java.time.Instant;
 
-public class RawTelemetryDTO {
+public class RawTelemetryDto {
     private String deviceId;
     private Instant timestamp;
     private double latitude;

@@ -1,7 +1,7 @@
 package com.zuehlke.telemetry.processor.service;
 
 import com.zuehlke.telemetry.processor.mapper.TelemetryMapper;
-import com.zuehlke.telemetry.processor.model.RawTelemetryDTO;
+import com.zuehlke.telemetry.processor.model.RawTelemetryDto;
 import com.zuehlke.telemetry.processor.model.TelemetryData;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -27,7 +27,7 @@ public class TelemetryStreamService {
     }
 
     @KafkaListener(topics = "${kafka.topic.in}", groupId = "telemetry-processor-group")
-    public void process(RawTelemetryDTO raw) {
+    public void process(RawTelemetryDto raw) {
         TelemetryData data = mapper.map(raw);
         data = enricher.enrich(data);
 
